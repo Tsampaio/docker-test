@@ -13,8 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Checkout
+        name: Build
         uses: actions/checkout@v2
+        run: |
+          echo 'Running build...'
+          docker build -t my-app .
+          docker run my-app
+          echo 'Done!'
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
