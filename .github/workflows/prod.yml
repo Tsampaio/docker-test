@@ -12,9 +12,8 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Build
-        uses: actions/checkout@v2
+      - name: Build
+      - uses: actions/checkout@v2
         run: |
           echo 'Running build...'
           docker build -t my-app .
